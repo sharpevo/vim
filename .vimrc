@@ -8,28 +8,29 @@ set history=50 " keep 50 lines of command line history
 " these are files we are not likely to edit or read
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 
-set ls=2 " always show status line
-set tabstop=4
-set shiftwidth=4 " number of spaces to use for each step of indent
-set expandtab " tabs are coverted to spaces
-set showcmd " display incomplete command
-set number " show line numbers
-set numberwidth=4 " line numbering takes up 5 spaces
-set hlsearch
-set incsearch " find as you type search
-set ignorecase " ignore case when searching
-set smartcase
-set backspace=2
 set background=dark
-set mouse=a " enable mouse
-set nobackup
-set cursorline
+set backspace=2
 set cursorcolumn
-set nowrap
-set ttyfast " smoother changes
+set cursorline
+set expandtab " tabs are coverted to spaces
+set hlsearch
+set ignorecase " ignore case when searching
+set incsearch " find as you type search
+set ls=2 " always show status line
 set modeline " last lines in document sets vim mode
 set modelines=3
+set mouse=a " enable mouse
+set nobackup
 set nostartofline " don't jump to first character while paging
+set nowrap
+set number " show line numbers
+set numberwidth=4 " line numbering takes up 5 spaces
+set shiftwidth=4 " number of spaces to use for each step of indent
+set showcmd " display incomplete command
+set smartcase
+set tabstop=4
+set textwidth=0 " disable auto wrap 
+set ttyfast " smoother changes
 
 filetype plugin indent on
 set noautoindent " turn off by default, enabled by specific filetypes
@@ -37,13 +38,15 @@ set nosmartindent
 set nocindent
 
 syntax on
-"let g:solarized_termcolors=256 " if not use solarized color in xresource.
+"let g:solarized_termcolors=256 " for solarized theme without solarized terminal color in xresource.
+"let g:hybrid_use_Xresources = 1 " for bybrid theme 
 colorscheme solarized
 " 1.red, 2.yellowgreen, 3.brown 4.blue, 5.pink, 6.cyan, 7.white
-hi StatusLine ctermbg=black ctermfg=6
-set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\ [%l/%L\ (%p%%)
+hi StatusLine ctermbg=16 ctermfg=45
+set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\ (%l,%c)\ %p%%
 au FileType py,sh,java,pl,c set autoindent
 au FileType py,sh,java,pl,c set smartindent
+au FileType py,sh,java,pl,c set textwidth=87
 
 let mapleader=','
 " make ; working like : without holding shift
