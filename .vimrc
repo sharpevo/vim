@@ -23,6 +23,8 @@ set backspace=2
 set background=dark
 set mouse=a " enable mouse
 set nobackup
+set cursorline
+set cursorcolumn
 set nowrap
 set ttyfast " smoother changes
 set modeline " last lines in document sets vim mode
@@ -35,8 +37,10 @@ set nosmartindent
 set nocindent
 
 syntax on
-colorscheme hybrid
-hi StatusLine ctermbg=cyan ctermfg=black
+"let g:solarized_termcolors=256 " if not use solarized color in xresource.
+colorscheme solarized
+" 1.red, 2.yellowgreen, 3.brown 4.blue, 5.pink, 6.cyan, 7.white
+hi StatusLine ctermbg=black ctermfg=6
 set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\ [%l/%L\ (%p%%)
 au FileType py,sh,java,pl,c set autoindent
 au FileType py,sh,java,pl,c set smartindent
