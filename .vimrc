@@ -51,6 +51,7 @@ au FileType py,sh,java,pl,c set textwidth=87
 let mapleader=','
 " make ; working like : without holding shift
 nnoremap ; :
+vnoremap ; :
 " yank from the cursor to the end of the line, to be consistent with C and D
 nnoremap Y y$
 
@@ -61,6 +62,8 @@ nmap <leader>f2 :set foldlevel=2<CR>
 nmap <leader>f3 :set foldlevel=3<CR>
 nmap <leader>f4 :set foldlevel=4<CR>
 
+nmap <leader>t :Tabularize /
+vmap <leader>t :Tabularize /
 " clear highlight search
 nmap <silent> <leader>/ :nohlsearch<CR>
 
