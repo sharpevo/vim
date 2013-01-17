@@ -143,11 +143,6 @@ nnoremap <leader>z :%s#\<<C-r>=expand("<cword>")<CR>\>#
 " Reselect text that was just pasted with ,v
 nnoremap <leader>v V`]
 
-" keep search matches in the middle of window and pulse the line when moving
-" to them
-nnoremap n n:call PulseCursorLine()<cr>
-nnoremap N N:call PulseCursorLine()<cr>
-
 " quickly get out of inseart mode
 inoremap jj <Esc>
 
