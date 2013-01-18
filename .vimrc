@@ -10,7 +10,6 @@ call pathogen#helptags()
 
 let mapleader=',' " change he mapleader from / to ,
 
-
 filetype plugin indent on " enable detection, plugins and indenting in one step
 
 " hide buffers instead of closing them. So we can have unwritten changes to
@@ -40,7 +39,7 @@ set gdefault " search/replace globally on a line by default
 set mouse=a " enable mouse
 set lazyredraw " don't update the display while excuting macros
 set laststatus=2 " always show statusline even if there is only one window
-set cmdheight=2 " use a status bar that is 2 rows high
+"set cmdheight=2 " use a status bar that is 2 rows high
 set background=dark
 set cursorcolumn
 set cursorline
@@ -209,3 +208,9 @@ vmap <leader>a :Tabularize /
 " changing working directory to that of the current file
 cmap cwd lcd %:p:h
 cmap cd. lcd %:p:h
+if has('gui_running')
+    set guioptions=ae           " remove the toolbar
+    set guifont=Tamsyn\ 6
+else
+    set term=builtin_ansi       " Make arrow and other keys work
+endif
