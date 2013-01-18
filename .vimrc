@@ -180,7 +180,7 @@ syntax on
 "let g:hybrid_use_Xresources = 1 " for bybrid theme 
 colorscheme solarized
 " 1.red, 2.yellowgreen, 3.brown 4.blue, 5.pink, 6.cyan, 7.white
-hi StatusLine ctermbg=16 ctermfg=45
+hi StatusLine ctermbg=black ctermfg=7
 set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\ (%l,%c)\ %p%%
 au FileType py,sh,java,pl,c set autoindent
 au FileType py,sh,java,pl,c set smartindent
