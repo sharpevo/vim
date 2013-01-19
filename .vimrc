@@ -91,6 +91,10 @@ set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\ (%l,%c)\ %p%%
 
 au FocusLost * :wa " save when focus lost
 
+" clear screen to avoid xterm slow down with many syntax highlight
+au VimLeave * :!clear
+
+
 
 " keybindings
 
