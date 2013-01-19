@@ -193,6 +193,7 @@ nnoremap Y y$
 
 " yank/paste to the OS clipboard with ,y and ,p
 nnoremap <leader>y "+y
+vnoremap <leader>y "+y
 nnoremap <leader>Y "+yy
 nnoremap <leader>p "+p
 nnoremap <leader>P "+P
