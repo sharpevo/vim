@@ -211,6 +211,5 @@ if has('gui_running')
     set guifont=Tamsyn\ 6
     set novisualbell
 else
-    set term=builtin_ansi       " Make arrow and other keys work
     hi StatusLine ctermbg=black ctermfg=white
 endif
