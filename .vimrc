@@ -87,6 +87,7 @@ set pastetoggle=<F2>
 
 set fileformats="unix,dos,mac"
 set formatoptions+=1 " when wrapping paragraphs, don't end lines with 1-letter words.
+set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\ (%l,%c)\ %p%%
 
 au FocusLost * :wa " save when focus lost
 
@@ -175,13 +176,10 @@ autocmd filetype python nnoremap <buffer> <leader>bp :normal Oimport pdb; pdb.se
 " Toggling True/False
 autocmd filetype python nnoremap <silent> <C-t> mmviw:s/True\\|False/\={'True':'False','False':'True'}[submatch(0)]/<CR>`m:nohlsearch<CR>
 
-syntax on
 "let g:solarized_termcolors=256 " for solarized theme without solarized terminal color in xresource.
-"let g:hybrid_use_Xresources = 1 " for bybrid theme 
+syntax on
 colorscheme solarized
-" 1.red, 2.yellowgreen, 3.brown 4.blue, 5.pink, 6.cyan, 7.white
-hi StatusLine ctermbg=black ctermfg=7
-set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\ (%l,%c)\ %p%%
+
 au FileType py,sh,java,pl,c set autoindent
 au FileType py,sh,java,pl,c set smartindent
 au FileType py,sh,java,pl,c set textwidth=87
@@ -211,6 +209,8 @@ cmap cd. lcd %:p:h
 if has('gui_running')
     set guioptions=ae           " remove the toolbar
     set guifont=Tamsyn\ 6
+    set novisualbell
 else
     set term=builtin_ansi       " Make arrow and other keys work
+    hi StatusLine ctermbg=black ctermfg=white
 endif
