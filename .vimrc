@@ -18,7 +18,8 @@ filetype plugin indent on " enable detection, plugins and indenting in one step
 set hidden
 
 set showmode
-set nowrap " don't wrap lines
+set wrap " wrap lines
+set tw=0 " prvent truncate lines
 set tabstop=4
 set softtabstop=4 " pretend to remove a tab even if spacets when hitting <BS>
 set shiftwidth=4 " number of spaces to use for each step of indent
@@ -186,7 +187,6 @@ colorscheme solarized
 
 au FileType py,sh,java,pl,c set autoindent
 au FileType py,sh,java,pl,c set smartindent
-au FileType py,sh,java,pl,c set textwidth=87
 
 " yank from the cursor to the end of the line, to be consistent with C and D
 nnoremap Y y$
