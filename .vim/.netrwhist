@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/ryan/configs/vim/.vim/ruby'
+let g:netrw_dirhist_2='/opt/adobe-air-sdk/frameworks'
+let g:netrw_dirhist_3='/home/ryan/local/webreader/adobe-air'
+let g:netrw_dirhist_4='/home/ryan/.cache'
+let g:netrw_dirhist_5='/home/ryan/.config/fontconfig'
+let g:netrw_dirhist_6='/etc/bash_completion.d'
+let g:netrw_dirhist_7='/home/ryan/local/scripts/python/identpattern'
+let g:netrw_dirhist_8='/home/ryan/local/scripts/python/mplayer_resumer/test'
