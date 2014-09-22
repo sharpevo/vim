@@ -25,8 +25,6 @@ set softtabstop=4 " pretend to remove a tab even if spacets when hitting <BS>
 set shiftwidth=4 " number of spaces to use for each step of indent
 set shiftround " use multiple of shiftwidth when indenting with '<' or '>'
 set backspace=indent,eol,start " allow backspacing over everything in insert mode.
-set noautoindent " turn off by default, enabled by specific filetypes
-set nosmartindent
 set nocindent
 set copyindent " copy the previous indention on autoindenting
 set number " show line numbers
@@ -96,6 +94,16 @@ au FocusLost * :wa " save when focus lost
 au VimLeave * :!clear
 
 
+" pymode
+let g:pymode_folding=0  " disable folding automatically
+let g:pymode_lint_write=0  " disable pylint checking every save
+let g:pymode_doc_key='K' " set 'K' show python documentation
+nmap <leader>k :PyLint<CR>
+nmap <leader>f :PyLintAuto<CR>
+let g:pymode_run_key='R'  " set key 'R' run python code
+let g:pymode_syntax = 0  " disable pymode's syntax highlight
+
+
 
 " keybindings
 
@@ -111,6 +119,10 @@ nnoremap <C-y> 2<C-y>
 nnoremap ; :
 nnoremap <leader>; ;
 vnoremap ; :
+
+" q to quit
+nmap q :quit<CR>
+vmap q :quit<CR>
 
 " Use Q to format current paragraph para
 vmap Q gq
@@ -184,9 +196,15 @@ autocmd filetype python nnoremap <silent> <C-t> mmviw:s/True\\|False/\={'True':'
 "let g:solarized_termcolors=256 " for solarized theme without solarized terminal color in xresource.
 syntax on
 colorscheme solarized
+call togglebg#map("<F5>")
 
 au FileType py,sh,java,pl,c set autoindent
 au FileType py,sh,java,pl,c set smartindent
+
+" command-t settings
+let g:CommandTAlwaysShowDotFiles=1
+let g:CommandTScanDotDirectories=1
+set wildignore+=*.o,*.obj,.git
 
 " yank from the cursor to the end of the line, to be consistent with C and D
 nnoremap Y y$
@@ -215,6 +233,4 @@ if has('gui_running')
     set guioptions=ae           " remove the toolbar
     set guifont=Tamsyn\ 6
     set novisualbell
-else
-    hi StatusLine ctermbg=black ctermfg=white
 endif
