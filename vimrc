@@ -8,6 +8,12 @@ filetype off " force reloading after pathogen loaded
 call pathogen#infect()
 call pathogen#helptags()
 
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'fatih/vim-go'
+call vundle#end()
+
 let mapleader=',' " change he mapleader from / to ,
 
 filetype plugin indent on " enable detection, plugins and indenting in one step
